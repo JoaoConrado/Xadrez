@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace xadrez_console.tabuleiro
+namespace tabuleiro
 {
     internal enum Cor
     {
-        Branca, 
+        Branca,
         Preta,
         Amarela,
         Azul,

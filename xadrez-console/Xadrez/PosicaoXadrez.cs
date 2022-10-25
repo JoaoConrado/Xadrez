@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using xadrez_console.tabuleiro;
+using tabuleiro;
 namespace xadrez
 {
     internal class PosicaoXadrez
@@ -21,7 +21,7 @@ namespace xadrez
 
         public Posicao toPosicao()
         {
-            return new Posicao(8 - Linha, Coluna - 'A');
+            return new Posicao(8 - Linha, Coluna - 'a');
         }
         public override string ToString()
         {

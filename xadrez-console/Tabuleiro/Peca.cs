@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace xadrez_console.tabuleiro
+namespace tabuleiro
 {
     internal abstract class Peca
     {
         public Posicao posicao { get; set; }
         public Cor cor { get; protected set; }
-        public int qtdMovimentos {get; protected set;}
+        public int qtdMovimentos { get; protected set; }
         public Tabuleiro tab { get; protected set; }
 
         public Peca(Tabuleiro tab, Cor cor)
@@ -21,6 +21,10 @@ namespace xadrez_console.tabuleiro
             qtdMovimentos = 0;
         }
 
+        public void incrementarQteMovimentos()
+        {
+            qtdMovimentos++;
+        }
 
 
     }
