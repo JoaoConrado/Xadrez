@@ -20,11 +20,16 @@ namespace tabuleiro
             this.cor = cor;
             qtdMovimentos = 0;
         }
-
         public void incrementarQteMovimentos()
         {
             qtdMovimentos++;
         }
+        public abstract bool[,] MovimentoPossiveis();
+        
+
+        
+
+        
 
 
     }
