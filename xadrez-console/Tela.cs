@@ -1,38 +1,31 @@
 ﻿using System;
+using System.Collections.Generic;
 using tabuleiro;
 using xadrez;
-using System.Collections.Generic;
 
 namespace xadrez_console {
     class Tela {
-        public static void imprimirPartida(PartidaDeXadrez partida)
-        {
-            Console.WriteLine();
+
+        public static void imprimirPartida(PartidaDeXadrez partida) {
             imprimirTabuleiro(partida.tab);
             Console.WriteLine();
             imprimirPecasCapturadas(partida);
             Console.WriteLine();
             Console.WriteLine("Turno: " + partida.turno);
-            if (!partida.terminada)
-            {
-            Console.WriteLine("Aguardando jogada: " + partida.jogadorAtual);
-            if (partida.xeque)
-            {
-                Console.WriteLine("XEQUE!");
+            if (!partida.terminada) {
+                Console.WriteLine("Aguardando jogada: " + partida.jogadorAtual);
+                if (partida.xeque) {
+                    Console.WriteLine("XEQUE!");
+                }
             }
+            else {
+                Console.WriteLine("XEQUEMATE!");
+                Console.WriteLine("Vencedor: " + partida.jogadorAtual);
             }
-
-            else
-            {
-                Console.WriteLine("XequeMate");
-                Console.WriteLine("Vencedor: " + partida.jogadorAtual) ;
-            }
-
         }
 
-        public static void imprimirPecasCapturadas(PartidaDeXadrez partida)
-        {
-            Console.WriteLine("Peças capturadas: ");
+        public static void imprimirPecasCapturadas(PartidaDeXadrez partida) {
+            Console.WriteLine("Peças capturadas:");
             Console.Write("Brancas: ");
             imprimirConjunto(partida.pecasCapturadas(Cor.Branca));
             Console.WriteLine();
@@ -44,15 +37,14 @@ namespace xadrez_console {
             Console.WriteLine();
         }
 
-        public static void imprimirConjunto(HashSet<Peca> conjunto)
-        {
+        public static void imprimirConjunto(HashSet<Peca> conjunto) {
             Console.Write("[");
-            foreach(Peca x in conjunto)
-            {
-                Console.Write(x+ " ");
+            foreach (Peca x in conjunto) {
+                Console.Write(x + " ");
             }
             Console.Write("]");
         }
+
         public static void imprimirTabuleiro(Tabuleiro tab) {
 
             for (int i=0; i<tab.linhas; i++) {
